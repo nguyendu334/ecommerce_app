@@ -41,7 +41,7 @@ export const loginController = async (req, res) => {
             res.status(404).json('Incorrect password');
         }
 
-        const token = await jwt.sign(
+        const token = jwt.sign(
             {
                 id: user._id,
             },
@@ -69,3 +69,10 @@ export const loginController = async (req, res) => {
         });
     }
 };
+
+export const testController = async (req, res) => {
+    res.status(200).send({
+        success: true,
+        message: 'Test Successful',
+    })
+}
