@@ -89,3 +89,21 @@
   align-items: center;
   justify-content: center;
 }
+
+/* register page css */
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 700px;
+  flex-direction: column;
+  margin: 32px auto;
+  border-radius: 50px;
+  box-shadow: #000 0px 0px 10px 0px;
+}
+
+.form-control {
+  width: 400px;
+  margin: 10px;
+}
