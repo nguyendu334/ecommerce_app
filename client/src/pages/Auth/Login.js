@@ -29,8 +29,8 @@ const Login = () => {
     };
 
     return (
-        <Layout title={'Register - Ecommerce App'}>
-            <div className="register">
+        <Layout title={'Login - Ecommerce App'}>
+            <div className="login">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">

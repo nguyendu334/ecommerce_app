@@ -95,15 +95,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  width: 700px;
+  width: 50vh;
+  height: 55vh;
   flex-direction: column;
   margin: 32px auto;
   border-radius: 50px;
-  box-shadow: #000 0px 0px 10px 0px;
+  box-shadow: #837474 0px 0px 10px 0px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vh;
+  height: 35vh;
+  flex-direction: column;
+  margin: 32px auto;
+  border-radius: 50px;
+  box-shadow: #837474 0px 0px 10px 0px;
 }
 
 .form-control {
   width: 400px;
   margin: 10px;
+  box-shadow: #5e5d5d 0px 0px 10px 0px;
 }
