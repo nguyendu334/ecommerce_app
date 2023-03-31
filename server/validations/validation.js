@@ -8,4 +8,9 @@ const register = Joi.object({
     address: Joi.string().min(1).max(50).required(),
 });
 
+const login = Joi.object({
+    email: Joi.string().email().lowercase().required(),
+    password: Joi.string().min(6).required(),
+})
+
 export default { register };
