@@ -1,10 +1,22 @@
-import React from 'react'
+import React from 'react';
 import Layout from './../components/Layout/Layout';
 
 const About = () => {
-  return (
-    <Layout><h1>About</h1></Layout>
-  )
-}
+    return (
+        <Layout>
+            <div className="row contactus ">
+                <div className="col-md-6 ">
+                    <img src="/images/about.jpeg" alt="contactus" style={{ width: '100%' }} />
+                </div>
+                <div className="col-md-4">
+                    <h1 className="bg-dark p-2 text-white text-center">ABOUT</h1>
+                    <p className="text-justify mt-2">
+                        LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. SED DO EIUSMOD
+                    </p>
+                </div>
+            </div>
+        </Layout>
+    );
+};
 
-export default About
+export default About;
