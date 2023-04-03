@@ -62,6 +62,22 @@ const Login = () => {
                             required
                         />
                     </div>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            navigate('/forgot-password');
+                        }}
+                        style={{
+                            border: 'none',
+                            background: 'none',
+                            textDecoration: 'underline',
+                            cursor: 'pointer',
+                            marginBottom: '10px',
+                            marginLeft: '280px',
+                        }}
+                    >
+                        Forgot Password?
+                    </button>
                     <div className="d-flex justify-content-center">
                         <button type="submit" className="btn btn-outline-primary rounded">
                             Login

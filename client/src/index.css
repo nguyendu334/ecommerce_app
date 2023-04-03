@@ -108,7 +108,7 @@
   align-items: center;
   justify-content: center;
   width: 50vh;
-  height: 35vh;
+  height: 40vh;
   flex-direction: column;
   margin: 32px auto;
   border-radius: 50px;
@@ -119,4 +119,9 @@
   width: 400px;
   margin: 10px;
   box-shadow: #5e5d5d 0px 0px 10px 0px;
+}
+
+.backToLogin:hover {
+  color: #1900ff;
+  text-decoration: 'underline',
 }

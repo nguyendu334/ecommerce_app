@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 // Register Controller
 export const registerController = async (req, res) => {
     try {
-        const { name, email, password, phone, address } = req.body;
+        const { name, email, password, phone, address, answer } = req.body;
         const hashedPassword = await hashPassword(password);
         const user = await new userModel({
             name,
@@ -13,6 +13,7 @@ export const registerController = async (req, res) => {
             password: hashedPassword,
             phone,
             address,
+            answer,
         }).save();
         res.status(201).send({
             success: true,
@@ -60,7 +61,35 @@ export const loginController = async (req, res) => {
                 address: user.address,
             },
             token,
-        })
+        });
+    } catch (error) {
+        res.status(500).send({
+            success: false,
+            message: 'Server Error',
+            error: error.message,
+        });
+    }
+};
+
+// forgot password controller
+export const forgotPasswordController = async (req, res) => {
+    try {
+        const { email, answer, newPassword } = req.body;
+        const user = await userModel.findOne({ email, answer });
+
+        if (!user) {
+            return res.status(404).send({
+                success: false,
+                message: 'User not found',
+            });
+        }
+
+        const hashedPassword = await hashPassword(newPassword);
+        await userModel.findByIdAndUpdate(user._id, { password: hashedPassword });
+        res.status(200).send({
+            success: true,
+            message: 'Password changed successfully',
+        });
     } catch (error) {
         res.status(500).send({
             success: false,
@@ -74,5 +103,5 @@ export const testController = async (req, res) => {
     res.status(200).send({
         success: true,
         message: 'Test Successful',
-    })
-}
+    });
+};
