@@ -20,4 +20,8 @@ const forgotPassword = Joi.object({
     newPassword: Joi.string().required(),
 })
 
-export default { register,login, forgotPassword };
+const createCategory = Joi.object({
+    name: Joi.string().min(1).max(50).required(),
+})
+
+export default { register,login, forgotPassword, createCategory };

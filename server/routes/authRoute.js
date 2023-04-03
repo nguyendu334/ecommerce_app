@@ -14,7 +14,7 @@ router.post('/register', validator('register'), registerController);
 router.post('/login', loginController);
 
 // forgot pasword
-router.post('/forgot-password',validator('forgotPassword'), forgotPasswordController);
+router.post('/forgot-password', validator('forgotPassword'), forgotPasswordController);
 
 // test route
 router.get('/', requireSignIn, isAdmin, testController);
@@ -27,7 +27,7 @@ router.get('/user-auth', requireSignIn, (req, res) => {
 });
 
 // protected addmin route
-router.get('/admin-auth', requireSignIn,isAdmin, (req, res) => {
+router.get('/admin-auth', requireSignIn, isAdmin, (req, res) => {
     res.status(200).send({
         ok: true,
     });
