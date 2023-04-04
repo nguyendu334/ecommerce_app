@@ -107,7 +107,7 @@ const HomePage = () => {
             <div className="row mt-3">
                 <div className="col-md-2">
                     <h4 className="text-center"> Filter by Category</h4>
-                    <div className="d-flex flex-column">
+                    <div className="d-flex flex-column m-3">
                         {categories?.map((c) => (
                             <Checkbox
                                 key={c._id}
@@ -118,7 +118,7 @@ const HomePage = () => {
                         ))}
                     </div>
                     <h4 className="text-center mt-4"> Filter by Price</h4>
-                    <div className="d-flex flex-column">
+                    <div className="d-flex flex-column m-3">
                         <Radio.Group onChange={(e) => setRadio(e.target.value)}>
                             {Prices?.map((p) => (
                                 <div key={p._id}>
