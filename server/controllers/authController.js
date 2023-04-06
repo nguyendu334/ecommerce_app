@@ -41,28 +41,29 @@ export const loginController = async (req, res) => {
         if (!match) {
             res.status(404).json('Incorrect password');
         }
-
-        const token = jwt.sign(
-            {
-                id: user._id,
-            },
-            process.env.SECRET_KEY,
-            {
-                expiresIn: '7d',
-            },
-        );
-        res.status(200).send({
-            success: true,
-            message: 'Login Successful',
-            user: {
-                name: user.name,
-                email: user.email,
-                phone: user.phone,
-                address: user.address,
-                role: user.role,
-            },
-            token,
-        });
+        if (user && match) {
+            const token = jwt.sign(
+                {
+                    id: user._id,
+                },
+                process.env.SECRET_KEY,
+                {
+                    expiresIn: '7d',
+                },
+            );
+            res.status(200).send({
+                success: true,
+                message: 'Login Successful',
+                user: {
+                    name: user.name,
+                    email: user.email,
+                    phone: user.phone,
+                    address: user.address,
+                    role: user.role,
+                },
+                token,
+            });
+        }
     } catch (error) {
         res.status(500).send({
             success: false,
