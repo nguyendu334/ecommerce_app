@@ -231,7 +231,54 @@ export const productListController = async (req, res) => {
     } catch (error) {
         res.status(400).send({
             success: false,
-            message: 'Error WHile Filtering Products',
+            message: 'Error While Filtering Products',
+            error,
+        });
+    }
+};
+
+// search product
+export const searchProductController = async (req, res) => {
+    try {
+        const { keyword } = req.params;
+        const results = await productModel
+            .find({
+                $or: [
+                    { name: { $regex: keyword, $options: 'i' } },
+                    { description: { $regex: keyword, $options: 'i' } },
+                ],
+            })
+            .select('-photo');
+        res.json(results);
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            message: 'Error While Searching Products',
+            error,
+        });
+    }
+};
+
+// related products
+export const relatedProductController = async (req, res) => {
+    try {
+        const { pid, cid } = req.params;
+        const products = await productModel
+            .find({
+                category: cid,
+                _id: { $ne: pid },
+            })
+            .select('-photo')
+            .limit(3)
+            .populate('category');
+        res.status(200).send({
+            success: true,
+            products,
+        });
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            message: 'Error while getting ralated Products',
             error,
         });
     }
