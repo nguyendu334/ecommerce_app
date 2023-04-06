@@ -128,7 +128,11 @@ const Header = () => {
                             <li className="nav-item">
                                 <Badge count={cart?.length}>
                                     <NavLink to="/cart" className="nav-link">
-                                        Cart
+                                        <img
+                                            src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png"
+                                            alt="cart"
+                                            style={{ height: '30px' }}
+                                        />
                                     </NavLink>
                                 </Badge>
                             </li>
