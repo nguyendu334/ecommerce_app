@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-const categoryScheme = new mongoose.Schema({
+const categorySchema = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
     },
     slug: {
@@ -12,4 +12,4 @@ const categoryScheme = new mongoose.Schema({
     },
 });
 
-export default mongoose.model('category', categoryScheme);
+export default mongoose.model('category', categorySchema);
