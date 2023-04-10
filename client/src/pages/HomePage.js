@@ -7,6 +7,7 @@ import { toast } from 'react-hot-toast';
 import Layout from './../components/Layout/Layout';
 import { Prices } from '../components/Prices';
 import { useCart } from '../context/cart';
+import "../styles/HomePage.css";
 
 const HomePage = () => {
     const navigate = useNavigate();

@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 import Layout from '../components/Layout/Layout';
 import { useCart } from '../context/cart';
 import { useAuth } from '../context/auth';
+import "../styles/CartStyles.css";
 
 const CartPage = () => {
     const [cart, setCart] = useCart();

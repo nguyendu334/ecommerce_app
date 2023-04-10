@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import Layout from '../../components/Layout/Layout';
+import '../../styles/AuthStyles.css';
 
 const Register = () => {
     const [name, setName] = useState('');
